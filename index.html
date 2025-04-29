@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Duo Putra Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<body>
+  <header>
+    <h1>Duo Putra Store</h1>
+    <nav><button onclick="showSection('login')">Login</button>
+        <button onclick="showSection('payment')">Pembayaran</button>
+        
+      <button onclick="showSection('home')">Beranda</button>
+      <button onclick="showSection('account')">Akun</button>
+      <button onclick="showSection('cart')">Keranjang</button>
+      <button onclick="showSection('delivery')">Pengantaran</button>
+    </nav>
+  </header>
+
+  <main><section id="login">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="login-message"></p>
+  </section>
+  
+  <section id="payment">
+    <h2>Pembayaran</h2>
+    <div id="payment-section">
+      <p>Total: <span id="total-price">Rp0</span></p>
+      <label for="method">Metode Pembayaran:</label>
+      <select id="method">
+        <option value="transfer">Transfer Bank</option>
+        <option value="cod">Bayar di Tempat</option>
+      </select>
+      <button onclick="pay()">Bayar Sekarang</button>
+      <p id="payment-message"></p>
+    </div>
+  </section>
+  
+    <section id="home" class="active">
+      <h2>Menu Makanan</h2>
+      <div class="food-list" id="food-list"></div>
+    </section>
+
+    <section id="account">
+      <h2>Akun Saya</h2>
+      <p>Nama: Pengguna</p>
+      <p>Email: pengguna@email.com</p>
+    </section>
+
+    <section id="cart">
+      <h2>Keranjang</h2>
+      <ul id="cart-list"></ul>
+    </section>
+
+    <section id="delivery">
+      <h2>Info Pengantaran</h2>
+      <p>Alamat: Jl. Contoh No.123, Jakarta</p>
+      <p>Estimasi waktu: 30-45 menit</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<button onclick="showSection('home')"><i class="fa fa-home"></i> Beranda</button>
+<button onclick="showSection('account')"><i class="fa fa-user"></i> Akun</button>
+<button onclick="showSection('cart')"><i class="fa fa-shopping-cart"></i> Keranjang</button>
+<button onclick="showSection('delivery')"><i class="fa fa-truck"></i> Pengantaran</button>
+<!DOCTYPE html>
+<section id="seller-registration">
+    <h2>Pendaftaran Penjual</h2>
+    <form id="seller-form">
+      <input type="text" id="seller-name" placeholder="Nama Toko" required />
+      <input type="email" id="seller-email" placeholder="Email" required />
+      <input type="password" id="seller-password" placeholder="Password" required />
+      <button type="submit">Daftar Penjual</button>
+    </form>
+    <p id="seller-message"></p>
+  </section>
+  <section id="seller-dashboard">
+    <h2>Dashboard Penjual</h2>
+    <button onclick="showAddProductForm()">Tambah Produk</button>
+    <div id="product-list"></div>
+  </section>
+  <section id="add-product-form" style="display: none;">
+    <h3>Tambah Produk</h3>
+    <form id="product-form">
+      <input type="text" id="product-name" placeholder="Nama Produk" required />
+      <input type="number" id="product-price" placeholder="Harga" required />
+      <input type="text" id="product-description" placeholder="Deskripsi Produk" required />
+      <button type="submit">Tambah Produk</button>
+    </form>
+  </section>
+    
